@@ -1,0 +1,49 @@
+# ignore node
+/node_modules/
+package-lock.json
+
+# ignore self-generated ssl
+*.local.crt
+*.local.key
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# ignore htaccess
+.htaccess
+
+# ignore Editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.vscode/
+
+# ignore log files and databases
+*.log
+*.sqlite
+
+# ignore production files
+/dist/
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ignore Search Replace DB
+/srdb/
