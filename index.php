@@ -127,6 +127,7 @@
                 <p class="p-03">CrowdStrike to Participate in Upcoming Investor Conferences</p>
                 <p class="cta">Jun 03, 2021</p>
                 <a href="#" class="btn">Read More</a>
+                <div class="icon-badge"><img src="/dist/images/icon-pdf.svg"></div>
               </div>
             </div>
             <div class="card-alt">
@@ -146,8 +147,27 @@
         <div class="col-md-3">
           <h2>Upcoming events</h2>
         </div>
-        <div class="col-md-9 lined-section">
-          Box
+        <div class="col-md-9">
+          <ul class="list-with-icon">
+            <li>
+              <a href="#">
+                <p class="subhead">Aug 31, 2021</p>
+                <p class="p-03 icon audio">CrowdStrike Fiscal Second Quarter 2022 Results Conference Call</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="subhead">Aug 31, 2021</p>
+                <p class="p-03 icon audio">CrowdStrike Fiscal Second Quarter 2022 Results Conference Call</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <p class="subhead">Aug 31, 2021</p>
+                <p class="p-03 icon audio">CrowdStrike Fiscal Second Quarter 2022 Results Conference Call</p>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
