@@ -36,6 +36,14 @@
     margin-bottom: 0;
   }
 
+  &.full {
+    @include make-col-ready();
+
+    @include media-breakpoint-up(lg) {
+      @include make-col(12);
+    }
+  }
+
   &.dark {
     background: transparent;
 

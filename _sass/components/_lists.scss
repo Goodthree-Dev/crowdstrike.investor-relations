@@ -1,3 +1,20 @@
+ul {
+
+  li {
+    color: $brand_black_80;
+    font-family: $font_haas_display;
+    font-size: 18px;
+    line-height: 26px;
+    border-top: 1px solid $brand_black_40;
+    padding: 30px 0;
+    position: relative;
+
+    &:first-of-type {
+      border-top: 0;
+    }
+  }
+}
+
 .list-with-icon {
 
   li {
@@ -45,6 +62,22 @@
               background-image: url('/assets/images/icon-audio.svg');
               height: 30px;
               width: 23px;
+            }
+          }
+
+          &.html {
+            &:before {
+              background-image: url('/assets/images/icon-html.svg');
+              height: 30px;
+              width: 23px;
+            }
+          }
+
+          &.pdf {
+            &:before {
+              background-image: url('/assets/images/icon-pdf.svg');
+              height: 25px;
+              width: 19px;
             }
           }
         }
