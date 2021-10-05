@@ -2,7 +2,6 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-vendor
 Gemfile.lock
 
 # ignore node
@@ -30,9 +29,6 @@ Thumbs.db
 # ignore log files and databases
 *.log
 *.sqlite
-
-# ignore production files
-/wp-content/themes/lcha/dist/
 
 # ignore compiled files
 *.com
