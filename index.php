@@ -1,26 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CrowdStrike IR</title>
-  <link rel="stylesheet" href="/dist/css/style.min.css">
-</head>
-<body>
-
-  <div class="alert-bar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>Learn about the latest cybersecurity news and trends on the CrowdStrike blog.</p>
-        </div>
-        <div class="col-md-6">
-          <a href="#">Explore Blog</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
+<?php require_once($_SERVER["DOCUMENT_ROOT"].'/includes/head.php'); ?>
+  
+  <?php include($_SERVER["DOCUMENT_ROOT"].'/includes/header.php'); ?>
+  
   <div class="hero">
     <div class="container">
       <div class="row">
@@ -242,5 +223,4 @@
     </div>
   </footer>
 
-</body>
-</html>
+<?php require_once($_SERVER["DOCUMENT_ROOT"].'/includes/foot.php'); ?>

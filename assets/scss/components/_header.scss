@@ -1,0 +1,57 @@
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  + * {
+    padding-top: 100px;
+  } 
+}
+
+.alert-bar {
+  background: #000;
+  padding: 20px 0;
+  width: 100%;
+
+  p {
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+}
+
+.site-header {
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    margin-right: auto;
+  }
+}
+
+nav {
+  padding-top: 35px;
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+
+    > li {
+
+      > a {
+        padding: 10px;
+        display: block;
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      &:not(:hover) {
+        > a {
+          color: white;
+        }
+      }
+    }
+  }
+}
