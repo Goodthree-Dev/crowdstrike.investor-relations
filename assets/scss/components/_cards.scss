@@ -1,0 +1,61 @@
+.border-card {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(6);
+  }
+
+  background: white;
+  border: 1px solid rgba(171, 171, 171, 0.3);
+  padding: 20px;
+
+  .subtitle {
+    color: $brand_black_80;
+    font-family: $font_sans;
+    font-size: 20px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    margin-bottom: .2em;
+    text-transform: uppercase;
+  }
+
+  .title {
+    font-family: $font_haas_display;
+    font-size: 50px;
+    line-height: 101.6%;
+    margin-bottom: .2em;
+
+    &.green {
+      color: $color_green;
+    }
+  }
+
+  .copy {
+    color: $brand_black_80;
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+
+  &.dark {
+    background: transparent;
+
+    .title {
+      color: white;
+    }
+
+    .copy {
+      color: $brand_black_40;
+    }
+  }
+}
+
+.card-alt {
+  @include make-col-ready();
+
+  @include media-breakpoint-up(lg) {
+    @include make-col(6);
+  }
+
+  background: white;
+  padding: 20px;
+}

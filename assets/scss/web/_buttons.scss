@@ -1,0 +1,62 @@
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+}
+
+.btn {
+  padding: 0.7em 2.75em;
+  background-color: $brand_red;
+  border: 2px solid $brand_red;
+  border-radius: 3em;
+  font-weight: 700;
+  display: inline-block;
+  color: white;
+  font-size: 16px;
+  line-height: 1;
+
+  &:hover {
+    background-color: $brand_red;
+    color: $brand_black;
+    text-decoration: none;
+  }
+
+  &.white {
+    color: $brand_black;
+    background: white;
+    border-color: white;
+
+    &:hover {
+      background: white;
+      color: $brand_red;
+    }
+  }
+
+  &.red-copy {
+    color: $brand_red;
+
+    &:hover {
+      color: $brand_red;
+    }
+
+    &.white:hover {
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  &.watch {
+    display: inline-flex;
+    align-items: center;
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 12px solid currentColor;
+      margin-right: 0.75em;
+    }
+  }
+}

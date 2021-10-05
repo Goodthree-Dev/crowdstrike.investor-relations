@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Tungsten';
+  src: local('Tungsten Condensed Book'), local('Tungsten-Condensed-Book'),
+      url('../fonts/TungstenCondensed-Book.woff2') format('woff2'),
+      url('../fonts/TungstenCondensed-Book.woff') format('woff'),
+      url('../fonts/TungstenCondensed-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tungsten';
+  src: local('Tungsten Condensed Bold'), local('Tungsten-Condensed-Bold'),
+      url('../fonts/TungstenCondensed-Bold.woff2') format('woff2'),
+      url('../fonts/TungstenCondensed-Bold.woff') format('woff'),
+      url('../fonts/TungstenCondensed-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tungsten Rounded';
+  src: local('Tungsten Rounded Book'), local('Tungsten-Rounded-Book'),
+      url('../fonts/TungstenRounded-Book.woff2') format('woff2'),
+      url('../fonts/TungstenRounded-Book.woff') format('woff'),
+      url('../fonts/TungstenRounded-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Carlson-Script';
+  src: local('Carlson-Script'),
+      url('../fonts/Carlson-Script.woff2') format('woff2'),
+      url('../fonts/Carlson-Script.woff') format('woff'),
+      url('../fonts/Carlson-Script.ttf') format('truetype'),
+      url('../fonts/Carlson-Script.svg#carlsonregular') format('svg');
+  font-style: normal;
+}
