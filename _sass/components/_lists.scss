@@ -1,0 +1,54 @@
+.list-with-icon {
+
+  li {
+    border-top: 1px solid $brand_black_40;
+    padding: 30px 0;
+    position: relative;
+
+    a {
+      color: $brand_black_80;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before {
+        display: block;
+        content: ' ';
+        background-image: url('/assets/images/icon-arrow.svg');
+        height: 26px;
+        margin-bottom: 30px;
+        position: absolute;
+        width: 28px;
+        top: 30px;
+        right: 0;
+      }
+
+      p {
+        margin-bottom: 1em;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        &.icon {
+          &:before {
+            display: inline-block;
+            content: ' ';
+            margin-right: 15px;
+            position: relative;
+            top: 5px;
+          }
+
+          &.audio {
+            &:before {
+              background-image: url('/assets/images/icon-audio.svg');
+              height: 30px;
+              width: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
