@@ -56,6 +56,19 @@
     @include make-col(6);
   }
 
-  background: white;
-  padding: 20px;
+  .copy {
+    background: white;
+    padding: 25px;
+
+    .p-03 {
+      margin-bottom: .75em;
+    }
+
+    .cta {
+      color: $brand_black_80;
+      font-size: 18px;
+      line-height: 21px;
+      font-weight: 600;
+    }
+  }
 }

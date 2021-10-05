@@ -121,12 +121,18 @@
           <h2>Financial Releases</h2>
         </div>
         <div class="col-md-9">
-          <div class="row gx-4">
+          <div class="row">
             <div class="card-alt">
-              Box
+              <div class="copy">
+                <p class="p-03">CrowdStrike to Participate in Upcoming Investor Conferences</p>
+                <p class="cta">Jun 03, 2021</p>
+                <a href="#" class="btn">Read More</a>
+              </div>
             </div>
             <div class="card-alt">
-              Box
+              <div class="copy">
+                Copy
+              </div>
             </div>
           </div>
         </div>
@@ -140,11 +146,24 @@
         <div class="col-md-3">
           <h2>Upcoming events</h2>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 lined-section">
           Box
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="darker">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2>Subscribe Now</h2>
+        </div>
+        <div class="col-md-9">
+          <h3>Receive updates in your inbox from Investor Relations</h3>
+          <p>Choose the topics you are interesed in:</p>
+        </div>
+      </div>
   </section>
 
   <footer>

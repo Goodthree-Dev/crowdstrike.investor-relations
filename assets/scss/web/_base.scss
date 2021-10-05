@@ -19,7 +19,8 @@ section {
 		padding-top: 30px;
 	}
 
-	&.dark {
+	&.dark,
+	&.darker {
 		background: $brand_black;
 		padding: 120px 0;
 
@@ -33,5 +34,9 @@ section {
 				background-image: url('/dist/images/icon-squares-white.svg');
 			}
 		}
+	}
+
+	&.darker {
+		background: $brand_black_97;
 	}
 }
