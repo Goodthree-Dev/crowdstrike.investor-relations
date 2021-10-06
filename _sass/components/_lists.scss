@@ -1,4 +1,7 @@
-ul {
+.text-list {
+  list-style: none;
+  text-indent: 0;
+  margin-left: 0;
 
   li {
     color: $brand_black_80;
@@ -6,8 +9,17 @@ ul {
     font-size: 18px;
     line-height: 26px;
     border-top: 1px solid $brand_black_40;
-    padding: 30px 0;
+    padding: 30px 0 30px 20px;
     position: relative;
+
+    &:before {
+      content: "\2022";
+      color: $brand_black_40;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -20px;
+    }
 
     &:first-of-type {
       border-top: 0;
