@@ -47,6 +47,8 @@
     }
 
     > li {
+      position: static;
+      border: none;
 
       > a {
         padding: 10px;
@@ -83,5 +85,9 @@
     top: 0;
     background-color: white;
     padding: 100px 80px 80px;
+
+    li {
+      padding: 0;
+    }
   }
 }
