@@ -76,7 +76,9 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 10vw;
-    font-size: 13px;
+    font-family: $font_haas_text;
+    letter-spacing: 0.045em;
+    font-size: 12px;
 
     a {
       padding: 10px;
@@ -102,12 +104,27 @@
         text-decoration: none;
         position: relative;
         z-index: 2;
+
+        &:before {
+          content: '';
+          background-color: $brand_red;
+          width: 16px;
+          height: 2px;
+          left: 10px;
+          bottom: 2px;
+          position: absolute;
+          opacity: 0;
+        }
       }
 
       &:hover {
         > .main-nav__sub {
           transform: scaleY(1) translateY(0);
           opacity: 1;
+        }
+        > a:before {
+          opacity: 1;
+          transition: inherit;
         }
       }
 
@@ -132,7 +149,28 @@
     padding: 100px 80px 80px;
 
     li {
-      padding: 0;
+      padding: 0 0 0 10px;
+
+      a {
+        color: $brand_black;
+        padding-left: 26px;
+        position: relative;
+
+        &:before {
+          content: '';
+          background-color: currentColor;
+          width: 13px;
+          height: 9px;
+          left: 0;
+          top: 11px;
+          position: absolute;
+        }
+
+        &:hover {
+          color: $brand_red;
+          text-decoration: none;
+        }
+      }
     }
   }
 }
