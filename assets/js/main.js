@@ -3,11 +3,42 @@ if (typeof $ === 'undefined') {
 }
 
 $(document).ready(function() {
-  // $('.main-nav__top').on('mouseover', '> li', function(e) {
-  //   console.log(e);
-  // });
-  new MegaNav('.main-nav');
 
+  /**
+   * Replace all SVG images with inline SVG
+   */
+  $('img[src$=".svg"]').each(function() {
+    var $img = $(this);
+    var imgID = $img.attr('id');
+    var imgClass = $img.attr('class');
+    var imgURL = $img.attr('src');
+
+    $.get(
+      imgURL,
+      function(data) {
+        // Get the SVG tag, ignore the rest
+        var $svg = $(data).find('svg');
+
+        // Add replaced image's ID to the new SVG
+        if (typeof imgID !== 'undefined') {
+          $svg = $svg.attr('id', imgID);
+        }
+        // Add replaced image's classes to the new SVG
+        if (typeof imgClass !== 'undefined') {
+          $svg = $svg.attr('class', imgClass + ' replaced-svg');
+        }
+
+        // Remove any invalid XML tags as per http://validator.w3.org
+        $svg = $svg.removeAttr('xmlns:a');
+
+        // Replace image with new SVG
+        $img.replaceWith($svg);
+      },
+      'xml'
+    );
+  });
+  
+  new MegaNav('.main-nav');
 });
 
 
@@ -17,10 +48,11 @@ $(window).on('scroll ready', function(){
       distance = hero.outerHeight() - sticky.outerHeight(),
       scroll = $(window).scrollTop();
 
-      console.log(distance);
-
-  if (scroll >= distance) sticky.addClass('fixed');
-  else sticky.removeClass('fixed');
+  if (scroll >= distance) {
+    sticky.addClass('fixed');
+  } else {
+    sticky.removeClass('fixed');
+  }
 });
 
 class MegaNav {
@@ -39,7 +71,7 @@ class MegaNav {
     var instance = this;
     this.$container.on(
       'MegaNav:sync',
-      this.options.navItems,
+      this.navItems,
       function(e, navItem) {
         instance.sync(navItem);
       }
@@ -63,6 +95,12 @@ class MegaNav {
   activate(navItem) {
     navItem.activate();
     this.$container.addClass('active')
+
+    this.navItems.forEach((el, i) => {
+      if(el != navItem) {
+        el.deactivate();
+      }
+    });
   }
   deactivate(navItem) {
     if (navItem) {
@@ -81,28 +119,38 @@ class NavItem {
     this.listen();
   }
   listen() {
-    this.$el.on('mouseenter', (e) => {
-      e.preventDefault();
+    var headerSearch = this.$el.hasClass('header-search');
+    
+    if(this.$subNav.length > 0) {
+      if(!headerSearch) {
+        this.$el.on('mouseenter', (e) => {
+          $(e.target).trigger('NavItem:mouseenter', [this]);
+          $(e.target).trigger('MegaNav:sync', [this]);
+        });
+  
+        this.$el.on('mouseleave', (e) => {
+          $(e.target).trigger('NavItem:mouseleave', [this]);
+          $(e.target).trigger('MegaNav:sync', [this]);
+        });  
+      } else {
+        this.$el.find('.header-search__toggle').on('click', (e) => {
+          e.preventDefault();
 
-      if(this.$subNav.length > 0) {
-        $(e.target).trigger('NavItem:mouseenter', [this]);
-        $(e.target).trigger('MegaNav:sync', [this]);
+          $(e.target).trigger('NavItem:click', [this]);
+          $(e.target).trigger('MegaNav:sync', [this]);
+        });
       }
-    });
-    this.$el.on('mouseleave', (e) => {
-      e.preventDefault();
-
-      if(this.$subNav.length > 0) {
-        $(e.target).trigger('NavItem:mouseleave', [this]);
-        $(e.target).trigger('MegaNav:sync', [this]);
-      }
-    });
+    }
   }
   activate() {
     var instance = this;
     this.active = true;
     $(this).trigger('NavItem:activated', [this]);
     instance.$el.addClass('active');
+    
+    if(instance.$el.hasClass('header-search')) {
+      instance.$el.find('input').focus();
+    }
   }
   deactivate() {
     var instance = this;

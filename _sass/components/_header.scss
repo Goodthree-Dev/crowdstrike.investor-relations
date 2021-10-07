@@ -13,6 +13,10 @@
     .main-nav__top > li:not(:hover) > a {
       color: $brand_black;
     }
+
+    .site-header .logo:not(:hover) path {
+      color: $brand_black;
+    }
   }
 }
 
@@ -38,7 +42,27 @@
 
   .logo {
     margin-right: auto;
-  }
+    width: 215px;
+    &__inner {
+      width: 100%;
+      padding-bottom: 19.5%;
+      position: relative;
+      &:not(:hover) {
+        color: white;
+      }
+    }
+    img,
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      path {
+        fill: currentColor;
+      }
+    }
+  }  
 }
 
 .main-nav {
@@ -75,7 +99,6 @@
   &__top {
     display: flex;
     justify-content: flex-end;
-    padding-right: 10vw;
     font-family: $font_haas_text;
     letter-spacing: 0.045em;
     font-size: 12px;
@@ -83,10 +106,6 @@
     a {
       padding: 10px;
       display: inline-block;
-    }
-
-    @media screen and (max-width: 1440px) {
-      padding-right: 140px;
     }
 
     ~ * {
@@ -104,8 +123,9 @@
         text-decoration: none;
         position: relative;
         z-index: 2;
+        white-space: nowrap;
 
-        &:before {
+        &:after {
           content: '';
           background-color: $brand_red;
           width: 16px;
@@ -117,12 +137,13 @@
         }
       }
 
-      &:hover {
+      &.active,
+      &:hover:not(.header-search) {
         > .main-nav__sub {
           transform: scaleY(1) translateY(0);
           opacity: 1;
         }
-        > a:before {
+        > a:after {
           opacity: 1;
           transition: inherit;
         }
@@ -148,7 +169,7 @@
     background-color: white;
     padding: 100px 80px 80px;
 
-    li {
+    > ul li {
       padding: 0 0 0 10px;
 
       a {
@@ -156,7 +177,7 @@
         padding-left: 26px;
         position: relative;
 
-        &:before {
+        &:after {
           content: '';
           background-color: currentColor;
           width: 13px;
@@ -172,5 +193,42 @@
         }
       }
     }
+  }
+}
+
+.header-search {
+  margin-left: 10vw;
+
+  .main-nav__sub {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    font-size: 40px;
+    outline: none;
+    font-family: $font_haas_display;
+    height: 40px;
+    padding: 0;
+    margin-left: 10px;
+    &::placeholder {
+      color: #ABABAB;
+    }
+  }
+
+  &__results {
+    padding-left: 10px;
+    overflow: auto;
+
+    ul:not(:empty) {
+      margin-top: 70px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 140px;
   }
 }
