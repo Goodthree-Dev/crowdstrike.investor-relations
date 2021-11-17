@@ -2,11 +2,6 @@ _site
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
-Gemfile.lock
-
-# ignore node
-/node_modules/
-package-lock.json
 
 # ignore self-generated ssl
 *.local.crt
