@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh '#!/bin/bash -l'
+                sh 'gem install bundler'
                 sh 'bundle install'
             }
         }
