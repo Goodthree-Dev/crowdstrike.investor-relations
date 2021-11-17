@@ -3,6 +3,12 @@ pipeline {
 
     stages {
 
+        stage('Build') {
+            steps {
+                sh 'bundle install'
+            }
+        }
+
         stage('Jekyll Runner') {
             steps {
                 sh 'jekyll build'
