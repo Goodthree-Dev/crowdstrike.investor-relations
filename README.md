@@ -7,7 +7,7 @@ You may need to run these commands before the ones below (Please note the Ruby V
 --
 
 # To Install Jekyll
-* gem install bundler Jekyll
+* gem install bundler jekyll
 * gem install -n /usr/local/bin jekyll
 * bundle add webrick
 * bundle update webrick
